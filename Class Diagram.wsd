@@ -1,0 +1,46 @@
+@startuml GamersChallenge
+
+!theme plain
+
+class "GamersChallenge" as gc {
+    +String Register()
+    +String UserProfiles()
+    +String ChooseDifficulty()
+    +String ChooseTimeLimit()
+    +String ViewResults()
+    +String RankUsers()
+    +String UseJokers()
+    +String ChallengeFriends()
+    +String AccessQuestionArchive()
+    +String ProvideFeedback()
+}
+
+class "User" as u {
+    +String username
+    +String email
+    +String password
+}
+
+class "QuizQuestion" as qq {
+    +String QuestionText
+    +String AnswerOptions
+    +String CorrectAnswers
+}
+
+class "QuizResult" as qr {
+    +String User
+    +int Score
+    +String CorrectAnswersInfo
+}
+
+class "Feedback" as f {
+    +String Ratings
+    +String Reviews
+}
+
+u --> gc
+gc --> qq
+gc --> qr
+gc --> f
+
+@enduml

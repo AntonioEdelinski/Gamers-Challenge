@@ -1,0 +1,33 @@
+@startuml GamersChallenge
+!theme plain
+
+title "Gamers Challenge"
+
+rectangle "Gamers Challenge" {
+    usecase "Registracija" as registracija
+    usecase "Profil korisnika" as profil
+    usecase "Personalizirano iskustvo" as iskustvo
+    usecase "Odabir težine" as tezina
+    usecase "Odabir vremenskog ograničenja" as vrijeme
+    usecase "Izazivanje prijatelja" as izazov
+    usecase "Pristup arhivi pitanja" as arhiva
+    usecase "Rezultati" as rezultati
+    usecase "Rangiranje korisnika" as rangiranje
+    usecase "Jokeri" as jokeri
+    usecase "Ocjene i recenzije" as ocjene
+}
+
+Korisnik --> registracija
+Korisnik --> profil
+profil --> iskustvo
+profil --> izazov
+profil --> arhiva
+profil --> ocjene
+izazov --> tezina
+izazov --> vrijeme
+izazov --> jokeri
+izazov --> rezultati
+rezultati --> rangiranje
+rezultati --> ocjene
+
+@enduml
